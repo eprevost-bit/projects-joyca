@@ -9,13 +9,13 @@
 
             <xpath expr="//field[@name='move_ids_without_package']"
                    position="attributes">
-                <attribute name="class">center-project-column</attribute>
+                <attribute name="class">text-center</attribute>
             </xpath>
 
 
             <xpath expr="//field[@name='move_ids_without_package']//field[@name='quantity']"
                    position="before">
-                <field name="proyecto_id" class="text-center "/>
+                <field name="proyecto_id" class="text-center"/>
             </xpath>
 
         </field>
