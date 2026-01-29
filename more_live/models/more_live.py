@@ -10,13 +10,9 @@ class MoreLiveConfigParams(models.AbstractModel):
     def update_config_params(self):
         icp = self.env["ir.config_parameter"].sudo()
 
-        key = "database.create_date"
+        key = "database.expiration_date"
 
-        # tomar la fecha actual del sistema (servidor)
         today = fields.Date.today()
+        new_date = today + timedelta(days=30)  # o los días que quieras
 
-        # restar 1 día → "ayer"
-        new_date = today - timedelta(days=1)
-
-        # guardar como string YYYY-MM-DD
         icp.set_param(key, fields.Date.to_string(new_date))
